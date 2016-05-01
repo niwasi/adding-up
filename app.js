@@ -36,10 +36,10 @@
             value.change = value.p15 / value.p10;
         }
         let rankingArray = Array.from(map).sort((p1, p2) => {
-            return p2[1].change - p1[1].change;
+            return p1[1].change - p2[1].change;
         });
-        let rankingstrings = rankingArray.map((p) => {
-            return p[0] + ': ' + p[1].p10 + '=>' + p[1].p15 + ' 変化率:' + p[1].change;
+        let rankingstrings = rankingArray.map((p, i) => {
+            return (i + 1)+ '位 ' + p[0] + ': ' + p[1].p10 + '=>' + p[1].p15 + ' 変化率:' + p[1].change;
         });
         console.log(rankingstrings);
     });
